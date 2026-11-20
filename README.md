@@ -13,8 +13,7 @@ Expect it to take 30 to 60 minutes. Most of that time is spent downloading and c
 - [Part 1: Create the bootable USB installer](#part-1-create-the-bootable-usb-installer)
 - [Part 2: Start the Intel iMac from the USB drive](#part-2-start-the-intel-imac-from-the-usb-drive)
 - [Troubleshooting](#troubleshooting)
-- [Corrections to the original AI answer](#corrections-to-the-original-ai-answer)
-- [Official Apple resources](#official-apple-resources)
+- [Links](#links)
 
 ---
 
@@ -42,19 +41,23 @@ To check for a T2 chip, hold **Option** and choose **Apple menu > System Informa
 
 ## Part 1: Create the bootable USB installer
 
-Official guide: [Create a bootable installer for macOS](https://support.apple.com/en-us/101578)
+Apple's official instructions for this part: [Create a bootable installer for macOS](https://support.apple.com/en-us/101578). This page is for reference only. Everything you need is already in the steps below.
 
 ### Step 1.1: Download the installer
 
-You need the full installer app, **Install macOS Sequoia**, in your Applications folder. It is about 15 GB. Use one of these two methods.
+This is the only file you need to download. It is the full installer app, **Install macOS Sequoia**, and it is about 12 to 15 GB. Use one of these two methods.
 
-**Option A: App Store**
+**Option A: App Store (recommended)**
 
-1. Open [How to download and install macOS](https://support.apple.com/en-us/102662) on Apple Support.
-2. Select the macOS Sequoia link. It opens the App Store.
-3. Click **Get** and wait for the download to finish.
+1. On the Mac you are using to make the USB, open this link:
 
-**Option B: Terminal**
+   **[Download macOS Sequoia from the App Store](https://apps.apple.com/app/macos-sequoia/id6596773750?mt=12)**
+
+2. The App Store opens on the macOS Sequoia page. If the link opens in your browser instead, click **View in Mac App Store**.
+3. Click **Get**. If a Software Update window opens and asks to confirm the download, click **Download**.
+4. Wait for the download to finish.
+
+**Option B: Terminal (if the App Store method does not work)**
 
 1. Open Terminal. Press Command-Space, type `Terminal`, and press Return.
 2. List the Sequoia versions you can download:
@@ -105,10 +108,7 @@ Keep the drive connected and Terminal open until you see `Install media now avai
 
 ## Part 2: Start the Intel iMac from the USB drive
 
-Official guides:
-
-- [About Startup Security Utility on a Mac with the Apple T2 Security Chip](https://support.apple.com/en-us/102522)
-- [Create a bootable installer for macOS](https://support.apple.com/en-us/101578), in the "Any other Mac" section
+Apple's official instructions for this part: [About Startup Security Utility on a Mac with the Apple T2 Security Chip](https://support.apple.com/en-us/102522). This page is for reference only. You don't need to download anything for Part 2.
 
 ### Step 2.1: Allow booting from external media
 
@@ -153,36 +153,22 @@ After installation, you can turn off external booting again. Repeat Step 2.1, an
 
 ---
 
-## Corrections to the original AI answer
+## Links
 
-I checked the first AI-generated answer against Apple's current support pages. These points were wrong, incomplete, or out of date:
+### Download (the only file you need)
 
-1. **`--full-installer-version 15.x` does not work.** The value has to be an exact version number such as `15.7.2`. Run `softwareupdate --list-full-installers` to see which versions are available.
-2. **The 32 GB claim was overstated.** The AI said 32 GB was required and that 16 GB drives fail. Apple says 32 GB is more than enough for any macOS installer and that 16 GB is enough for most earlier versions. A 32 GB drive is still the safest choice.
-3. **Formatting in Disk Utility is not required.** `createinstallmedia` erases and formats the drive itself. Use Disk Utility only if that erase fails.
-4. **The startup instructions were unclear.** The correct order is to shut down the iMac, connect the drive, turn the iMac on, and then hold Option.
-5. **The final steps were missing.** After selecting the USB drive, you still need to choose a language and then select Install macOS in the Utilities window. The iMac also needs an internet connection.
-6. **The Full Security explanation was vague.** At startup the Mac may download verification data from Apple. If FileVault is on, it may also ask for a disk password.
-7. **Newer macOS versions are now available.** The App Store shows the latest macOS first, so use Apple's [download page](https://support.apple.com/en-us/102662) to get Sequoia specifically. The 2020 iMac can also run macOS Tahoe 26.
+| File | Link |
+|---|---|
+| macOS Sequoia installer (Mac App Store) | [Open in the App Store](https://apps.apple.com/app/macos-sequoia/id6596773750?mt=12) |
 
-The AI got these points right:
-
-- The old support links (`HT201372`, `HT208198`) have been replaced by pages 101578 and 102522.
-- Holding the power button to reach startup options works only on Macs with Apple silicon. Intel iMacs use Command-R for Recovery and Option for the startup drive list.
-- The 2019 iMacs do not have a T2 chip. Only the 2020 iMac and the iMac Pro (2017) do.
-- You do not need to set Secure Boot to No Security. Changing Allowed Boot Media is enough.
-
----
-
-## Official Apple resources
+### Apple's official documentation (for reference only, nothing to download)
 
 | Topic | Link |
 |---|---|
-| Create a bootable installer for macOS | https://support.apple.com/en-us/101578 |
-| Startup Security Utility on a Mac with T2 | https://support.apple.com/en-us/102522 |
-| Download macOS Sequoia | https://support.apple.com/en-us/102662 |
-| Macs that support macOS Sequoia | https://support.apple.com/en-us/120282 |
-| Start up from macOS Recovery | https://support.apple.com/en-us/102518 |
+| Create a bootable installer for macOS | [support.apple.com/en-us/101578](https://support.apple.com/en-us/101578) |
+| Startup Security Utility on a Mac with T2 | [support.apple.com/en-us/102522](https://support.apple.com/en-us/102522) |
+| Macs that support macOS Sequoia | [support.apple.com/en-us/120282](https://support.apple.com/en-us/120282) |
+| Start up from macOS Recovery | [support.apple.com/en-us/102518](https://support.apple.com/en-us/102518) |
 
 ---
 
